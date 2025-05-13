@@ -1,11 +1,25 @@
 import React, { useState } from "react";
 
-const FeedbackForm = () => {
+const FeedbackForm = ({ AddOnfeedback }) => {
   const [rating, setRating] = useState(1);
   const [comment, setComment] = useState('');
 
+  let messages = []
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+
+    const newFeedback = {
+      rating: rating,
+      comment: comment,
+      id: Date.now()
+    }
+
+    AddOnfeedback(newFeedback)
+
+    setRating(1)
+    setComment('')
     
   };
 
@@ -27,7 +41,7 @@ const FeedbackForm = () => {
         <button type="submit">Submit Feedback</button>
 
         <label>Comment:</label>
-        <textarea value={comment} onChange={(e) => {
+        <textarea placeholder="Leave a comment" value={comment} onChange={(e) => {
             setComment(e.target.value)
         }}></textarea>
       </form>
