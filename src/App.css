@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,10 +7,12 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: DM Sans, sans-serif;
   background-color: #f5f5f5;
   padding: 2rem;
 }
+
+/* Form */
 
 h1 {
   text-align: center;
@@ -41,5 +45,113 @@ h1 {
   padding: 0.5rem;
   margin-bottom: 1rem;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 8px;
 }
+
+.nameOption {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.nameOption input {
+  width: auto;
+  padding: 12px 16px;
+  font-size: 1rem;
+}
+
+.nameOption input:disabled::placeholder {
+  opacity: .5;
+}
+
+.hideOption {
+  display: flex;
+  /* flex-direction: column; */
+  /* align-items: center; */
+  gap: 1rem;
+}
+
+.hideOption input[type="checkbox"] {
+  /* display: none; */
+  width: 20px;
+  height: 20px;
+  accent-color: #000; 
+  color: white;
+  cursor: pointer;
+}
+
+.feedback-form input[type="number"] {
+  padding: 12px 16px;
+  font-size: 1rem;
+}
+
+.feedback-form textarea {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border: 2x solid #ccc;
+  border-radius: 8px;
+  color: #222;
+  resize: none;
+  /* transition: border-color 0.2s, box-shadow 0.2s; */
+  outline: none;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.feedback-form textarea:focus {
+  outline: 2px solid black;
+  border-color: white;
+}
+
+.feedback-form button {
+  display: block;
+  padding: 0.75rem 1rem;
+  background-color: #55c2da;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  font-family: inherit;
+  margin-top: 15px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.feedback-form button:focus {
+  border-color: #7b5cff;
+  box-shadow: 0 0 0 2px rgba(123, 92, 255, 0.15);
+  background: #fff;
+}
+
+.feedback-form button:hover {
+  transform: scale(1.05);
+}
+
+/* List */
+
+.feedback-list {
+  max-width: 500px;
+  margin: 20px auto;
+  /* height: 100vh; */
+}
+
+.feedback-card {
+  background: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  /* border-bottom: 1px solid black; */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.feedback-card .feedback-rating {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.feedback-card .feedback-comment {
+  font-size: 0.875rem;
+  color: #333;
+}
+
+
